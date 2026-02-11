@@ -20,3 +20,23 @@ Les fichiers CSV sont importés depuis un poste local vers Google Cloud Storage 
 Flux des données :
 
 ![Sparkify Data Model](/images_pipelines.png)    
+
+# ⚡ Déploiement
+
+Pousser vos modifications sur GitHub → déclenche Cloud Build → déploie automatiquement la Cloud Function.
+
+Déposer un CSV dans le bucket GCS dans le dossier gcp_bq/ → déclenche la Cloud Function.
+
+La Cloud Function valide et charge les données dans BigQuery.
+
+# 🧪 Fonctionnalités clés
+
+Event-driven : Déclenché par l’upload d’un fichier GCS
+
+Temps réel : Les données sont fusionnées de manière incrémentale dans BigQuery
+
+CI/CD intégré : Déploiement automatique depuis GitHub
+
+Journalisation complète : Logs détaillés pour debug et monitoring
+
+Scalable : Peut gérer de gros volumes de CSV
